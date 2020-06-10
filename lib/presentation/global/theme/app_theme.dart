@@ -28,7 +28,7 @@ final appThemeData = {
   ),
   AppTheme.White: ThemeData(
     brightness: Brightness.light,
-    primaryColor: Colors.white,
+    primaryColor: Colors.grey[100],
   ),
   AppTheme.Black: ThemeData(
     brightness: Brightness.dark,
