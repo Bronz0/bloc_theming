@@ -1,13 +1,12 @@
+import 'package:bloc_theming/data/theme/theme_repo.dart';
 import 'package:bloc_theming/services/locator.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class ThemeServie {
+class ThemeServie implements ThemeRepo {
   void persistTheme(theme) async {
     sharedPreferences.setString("current_theme", theme);
   }
 
   String retreiveTheme() {
-    SharedPreferences _prefs = sharedPreferences;
-    return _prefs.getString("current_theme");
+    return sharedPreferences.getString("current_theme") ?? "no theme found!";
   }
 }

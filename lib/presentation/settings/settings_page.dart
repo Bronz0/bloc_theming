@@ -1,5 +1,5 @@
-import 'package:bloc_theming/presentation/global/theme/app_theme.dart';
-import 'package:bloc_theming/presentation/global/theme/bloc/theme_bloc.dart';
+import 'package:bloc_theming/business_logic/theme/theme_bloc.dart';
+import 'package:bloc_theming/data/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

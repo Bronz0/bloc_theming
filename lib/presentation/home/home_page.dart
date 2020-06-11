@@ -1,3 +1,4 @@
+import 'package:bloc_theming/presentation/counter/counter_page.dart';
 import 'package:bloc_theming/presentation/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,11 +21,28 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Container(
-          child: Text(
-            "Home Page",
-            style: Theme.of(context).textTheme.display1,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Container(
+              child: Text(
+                "Home Page",
+                style: Theme.of(context).textTheme.display1,
+              ),
+            ),
+            FloatingActionButton.extended(
+              heroTag: 'home_page_to_counter_page',
+              label: Text("Counter Page"),
+              icon: Icon(Icons.plus_one),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0)),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CounterPage(),
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

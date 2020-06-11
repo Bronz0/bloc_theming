@@ -1,4 +1,4 @@
-import 'package:bloc_theming/presentation/global/theme/bloc/theme_bloc.dart';
+import 'package:bloc_theming/business_logic/theme/theme_bloc.dart';
 import 'package:bloc_theming/presentation/home/home_page.dart';
 import 'package:bloc_theming/services/locator.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => ThemeBloc(),
       child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: _buildWithTheme,
+        builder: _app,
       ),
     );
   }
 
-  Widget _buildWithTheme(BuildContext context, ThemeState state) {
+  Widget _app(BuildContext context, ThemeState state) {
     return MaterialApp(
       title: 'Material App',
       theme: state.themeData,
