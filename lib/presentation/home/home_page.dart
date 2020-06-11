@@ -1,5 +1,6 @@
 import 'package:bloc_theming/presentation/counter/counter_page.dart';
 import 'package:bloc_theming/presentation/settings/settings_page.dart';
+import 'package:bloc_theming/presentation/timer/timer_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,6 +40,18 @@ class HomePage extends StatelessWidget {
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => CounterPage(),
+                ),
+              ),
+            ),
+            FloatingActionButton.extended(
+              heroTag: 'home_page_to_timer_page',
+              label: Text("Timer Page"),
+              icon: Icon(Icons.timer),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0)),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Timer(),
                 ),
               ),
             )
