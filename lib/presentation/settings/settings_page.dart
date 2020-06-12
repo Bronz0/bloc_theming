@@ -67,7 +67,7 @@ class ThemeItem extends StatelessWidget {
                 child: Center(
                   child: Text(
                     itemAppTheme.toString().split('.')[1],
-                    style: appThemeData[itemAppTheme].textTheme.body1,
+                    style: appThemeData[itemAppTheme].textTheme.headline1,
                   ),
                 ),
               ),
@@ -75,10 +75,8 @@ class ThemeItem extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Center(
-                  child: Text(
-                    'Hello!',
-                    style: appThemeData[itemAppTheme].textTheme.display1,
-                  ),
+                  child: Text('Hello!',
+                      style: appThemeData[itemAppTheme].textTheme.headline1),
                 ),
               )
             ],

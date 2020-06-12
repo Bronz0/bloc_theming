@@ -1,4 +1,7 @@
 import 'package:bloc_theming/business_logic/theme/theme_bloc.dart';
+import 'package:bloc_theming/business_logic/counter/counter_bloc.dart';
+import 'package:bloc_theming/business_logic/timer/timer_bloc.dart';
+import 'package:bloc_theming/data/timer/ticker.dart';
 import 'package:bloc_theming/presentation/home/home_page.dart';
 import 'package:bloc_theming/services/locator.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +19,19 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ThemeBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>(
+          create: (context) => ThemeBloc(),
+        ),
+        BlocProvider<CounterBloc>(
+          create: (context) => CounterBloc(),
+        ),
+        BlocProvider(
+          create: (context) => TimerBloc(ticker: Ticker()),
+          child: Container(),
+        )
+      ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: _app,
       ),

@@ -26,10 +26,8 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Container(
-              child: Text(
-                "Home Page",
-                style: Theme.of(context).textTheme.display1,
-              ),
+              child: Text("Home Page",
+                  style: Theme.of(context).textTheme.headline3),
             ),
             FloatingActionButton.extended(
               heroTag: 'home_page_to_counter_page',
