@@ -54,10 +54,7 @@ class _InfiniteListPageState extends State<InfiniteListPage> {
               controller: _scrollController,
             );
           } else {
-            return Container(
-              // TODO: remove the red color
-              color: Colors.red,
-            );
+            return Container();
           }
         },
       ),

@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            // go to timer page
+            // go to list page
             FloatingActionButton.extended(
               heroTag: 'home_page_to_list_page',
               label: Text("List Page"),
